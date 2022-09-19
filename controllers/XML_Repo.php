@@ -62,17 +62,11 @@ class XML_Repo implements IMeteoRepo{
             $this->fileDate['Wind_speed']=$value->parts->day_short->wind_speed;
             //$this->fileDate['Full_info']=$value;
 
-
-            $template_info =$this->fileDate;//$value;
+            $template_info =$this->fileDate;
 
             $xml = new SimpleXMLElement('<root/>');
             $this->array_to_xml($template_info,$xml);
-           
 
-            
-            //array_walk_recursive($this->fileDate, array ($xml, 'addChild'));
-            // print $xml->asXML();
-            //var_dump($this->fileDate);
             $xml->asXML('FileStorage/XML/'.$value->date.'('.$meteoInfo->meteoInfo->info->lat.'+'.$meteoInfo->meteoInfo->info->lon.').xml');
             
         }
