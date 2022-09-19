@@ -19,7 +19,7 @@ class JSON_Repo implements IMeteoRepo{
             $this->fileDate['Wind_dir']=$value->parts->day_short->wind_dir;
             $this->fileDate['Full_info']=$value;
 
-            file_put_contents('FileStorage/JSON/'.$value->date.'('.$meteoInfo->meteoInfo->info->lat.'+'.$meteoInfo->meteoInfo->info->lon.')',json_encode($this->fileDate));
+            file_put_contents('FileStorage/JSON/'.$value->date.'('.$meteoInfo->meteoInfo->info->lat.'+'.$meteoInfo->meteoInfo->info->lon.').json',json_encode($this->fileDate));
             
         }
         //TODO: Добавить отлов ошибок при ошибке записи (нетд доступа, путь не найтен и т.п.)

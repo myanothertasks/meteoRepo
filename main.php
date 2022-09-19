@@ -14,6 +14,8 @@ $meteoClient=new MeteoClient(new YandexMeteoAPI());
 $meteoData->meteoInfo=json_decode($meteoClient->getMeteoInfo($meteoData->lat, $meteoData->lon));
 
 //var_dump($meteoData);
-$repo = new MeteoStore(new XML_Repo());
+$repoXML = new MeteoStore(new XML_Repo());
+$repoJSON = new MeteoStore(new JSON_Repo());
 
-$repo->save($meteoData);
+$repoJSON->save($meteoData);
+$repoXML->save($meteoData);
