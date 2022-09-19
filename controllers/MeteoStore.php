@@ -1,11 +1,10 @@
 <?php
-require_once dirname("../interface/IMeteoRepo.php");
+require_once ("interfaces/IMeteoRepo.php");
 
 class MeteoStore implements IMeteoRepo{
     
     private $repo;
-    public function __construct($repo)
-    {
+    public function __construct($repo){
         $this->repo = $repo;
     }    
 

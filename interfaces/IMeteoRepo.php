@@ -2,6 +2,6 @@
 
 interface IMeteoRepo{
     //Метод для сохранения метео данных
-    public function save($meteoInfo): void;
+    public function save($meteoInfo);
 
 }
