@@ -1,13 +1,16 @@
 <?php
 require_once dirname("../interface/IMeteoRepo.php");
 
-abstract class MeteoStore implements IMeteoRepo{
+class MeteoStore implements IMeteoRepo{
     
-    abstract public function MeteoRepo(): IMeteoRepo; 
-    
+    private $repo;
+    public function __construct($repo)
+    {
+        $this->repo = $repo;
+    }    
+
     public function save($meteoInfo){
-        $repo= $this->MeteoRepo(); 
-        $repo->save($meteoInfo);
+        $this->repo->save($meteoInfo);
     }
 
 }

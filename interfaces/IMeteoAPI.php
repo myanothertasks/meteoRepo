@@ -2,6 +2,6 @@
 
 interface IMeteoAPI{
     //Метод для получения метео данных
-    public function getMeteoInfo(): void;
+    public function getMeteoInfo($lat, $lon);
 
 }
